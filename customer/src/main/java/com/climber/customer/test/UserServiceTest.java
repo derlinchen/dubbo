@@ -15,7 +15,8 @@ public class UserServiceTest {
 	private UserService userService;
     @Before
     public void setUp() throws Exception {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+        @SuppressWarnings("resource")
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
                 "classpath:dubbo/dubbo-*.xml");
         userService = applicationContext.getBean(UserService.class);
     }
